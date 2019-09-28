@@ -12,10 +12,17 @@ const helpers = require('./project-1');
 
 //arrange ,act, assert
 describe('project1',() =>{
+    let number
+    beforeEach(() =>{
+        number = 40;
+    })
+   
     describe('multiplyByTen',() =>{
+        
+        
         it('multiplies a number by 10 and returns result',()=>{
-            expect(helpers.multiplyByTen(4)).toBe(40);
-            expect(helpers.multiplyByTen(Math.max)).toBeNaN();
+            expect(helpers.multiplyByTen(4)).toBe(number);
+            expect(helpers.multiplyByTen('Infinity')).toBe(Infinity);
         })
     });
 });
